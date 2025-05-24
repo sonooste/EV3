@@ -64,7 +64,9 @@ CREATE TABLE Bookings (
 
 -- 7. ADMINS
 CREATE TABLE Admins (
-                        admin_id INT AUTO_INCREMENT PRIMARY KEY
+                        admin_id INT AUTO_INCREMENT PRIMARY KEY,
+                        user_id INT NOT NULL,
+                        FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
 
 -- 8. REPORTS
@@ -85,7 +87,9 @@ CREATE TABLE Malfunctions (
 
 -- 10. OPERATORS
 CREATE TABLE Operators (
-                           operator_id INT AUTO_INCREMENT PRIMARY KEY
+                           operator_id INT AUTO_INCREMENT PRIMARY KEY,
+                           user_id INT NOT NULL,
+                           FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
 
 -- 11. CENTRAL_OFFICES
